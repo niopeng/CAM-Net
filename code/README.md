@@ -10,29 +10,33 @@ CAM-Net is able to:
 - (Image-Synthesis) Generating diverse images from semantic layouts
 - (Decompression) Recover a plausible image from a heavily compressed image
 
-![Alt Text](website/teaser.gif)
+![Alt Text](../website/teaser.gif)
 ## Dependencies and Installation
 
 - Python 3.8
 - [PyTorch >= 1.5](https://pytorch.org)
 - NVIDIA GPU + [CUDA >= 10.2](https://developer.nvidia.com/cuda-downloads)
 
-To set up using pip, please run the following command:
+To get started, please run the following command:
 ```sh
 $ git clone --recursive https://github.com/niopeng/CAM-Net.git
-$ cd code
-$ pip install -r requirements.txt
-$ cd dciknn_cuda
-$ python setup.py install
 ```
-To set up using Anaconda, first replace the path you want to install the environment in the cam_net_env.yml file (in the last line "prefix").
-Note that this would install Pytorch 1.8 with CUDA 11.1 by default.
+
+[Optional] To set up using pip, please run the following command:
 ```sh
-$ git clone --recursive https://github.com/niopeng/CAM-Net.git
-$ cd code
+$ pip install -r requirements.txt
+```
+[Optional] To set up using Anaconda, first replace the path you want to install the environment in the cam_net_env.yml file (in the last line "prefix").
+Then, do the following:
+```sh
 $ conda env create -f cam_net_env.yml
 $ conda activate cam-net-env
-$ cd dciknn_cuda
+```
+Note that the provided yml file would install Pytorch 1.8 with CUDA 11.1 by default.
+
+[Required For Training] The training code uses [DCI CUDA][dci], to set up:
+```sh
+$ cd ./code/dciknn_cuda
 $ python setup.py install
 ```
 
@@ -67,3 +71,4 @@ The code consists of the following components:
 [pretrain]: https://github.com/niopeng/CAM-Net/tree/main/experiments/pretrained_models
 [options]:https://github.com/niopeng/CAM-Net/tree/main/code/options
 [data]:https://github.com/niopeng/CAM-Net/tree/main/code/data
+[dci]:https://github.com/niopeng/dciknn_cuda
